@@ -1,0 +1,49 @@
+body {
+	padding: 0px;
+	margin: 0px;
+	font-family: sans-serif;
+	font-size: 12px;
+	background: #9CF url('/white-to-blue.gif') top left repeat-x;
+}
+
+div {
+	width: 580px;
+	margin: 30px auto;
+	border: 3px solid #000;
+	background: #FFF;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+	padding: 5px 10px;
+}
+
+table {
+	width: 600px;
+	margin: 10px auto;
+	border: 3px solid #000;
+	background: #FFF;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+	padding: 5px;
+}
+
+th {
+	font-size: 2em;
+}
+td {
+	border-top: 3px solid #CCC;
+	padding: 5px 2px;
+}
+td:hover {
+	border-top: 3px solid #9CF;
+}
+
+.comment {
+	font-style: italic;
+	color: #666;
+	border-top: none !important;
+}
+code,
+.comment code {
+	font-style: normal;
+	color: #000;
+}

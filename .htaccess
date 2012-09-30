@@ -1,0 +1,28 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} !^0.30000000000000004.com [NC]
+RewriteRule ^(.*)$ http://0.30000000000000004.com/$1 [L,R=301]
+
+# 1 YEAR
+<FilesMatch "\.(ico|pdf|flv)$">
+Header set Cache-Control "max-age=29030400, public"
+</FilesMatch>
+# 1 MONTH
+<FilesMatch "\.(jpg|jpeg|png|gif|swf)$">
+Header set Cache-Control "max-age=2592000, public"
+</FilesMatch>
+# 1 WEEK
+<FilesMatch "\.(swf|js|css)$">
+Header set Cache-Control "max-age=604800, public"
+</FilesMatch>
+# 2 DAYS
+<FilesMatch "\.(xml|txt)$">
+Header set Cache-Control "max-age=172800, proxy-revalidate"
+</FilesMatch>
+# 1 HOUR
+<FilesMatch "\.(html|htm)$">
+Header set Cache-Control "max-age=3600, proxy-revalidate"
+</FilesMatch>
+# 1 MIN
+<FilesMatch "\.(php)$">
+Header set Cache-Control "max-age=60, private, proxy-revalidate"
+</FilesMatch>

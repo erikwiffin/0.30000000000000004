@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /white-to-blue.gif
+Disallow: /styles.css
+Allow: /

@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+<title>0.30000000000000004 - Floating Point Math</title>
+
+<meta name="description" content="Some examples of sending .1 + .2 to standard output in a variety of languages." />
+<meta name="keywords" content="floating point, math, php, mysql, erlang, ruby, python, javascript, java, haskell, ghc, hugs, bc, gforth, dc, racket, scheme, lisp, go, powershell, prolog" />
+<link rel="canonical" href="http://0.30000000000000004.com/" />
+
+<link rel="stylesheet" type="text/css"
+	href="/styles.css" />
+
+</head>
+
+<body>
+
+<div>
+	<h1>Floating Point Math</h1>
+	<p>
+		Your language isn't broken, it's doing floating point math.
+		Computers can only natively store integers,
+		so they need some way of representing decimal numbers.
+		This representation comes with some degree of inaccuracy.
+		That's why, more often than not, <code>.1 + .2 != .3</code>.
+	</p>
+	<p>
+		Below are some examples of sending <code>.1 + .2</code>
+		to standard output in a variety of languages.
+	</p>
+	<p align="center">
+		read more:
+		|
+		<a href="http://en.wikipedia.org/wiki/Floating_point">wikipedia</a>
+		|
+		<a href="http://grouper.ieee.org/groups/754/">IEEE 754</a>
+		|
+		<a href="http://stackoverflow.com/questions/588004/is-javascripts-math-broken/588014">Stack Overflow</a>
+	</p>
+</div>
+
+<table cellpadding="0" cellspacing="5">
+	<tr>
+		<th>Language</th>
+		<th>Code</th>
+		<th>Result</th>
+	</tr>
+	<!-- PHP -->
+	<tr>
+		<td>PHP</td>
+		<td><code>echo .1 + .2;</code></td>
+		<td>0.3</td>
+	</tr>
+	<!-- MySQL -->
+	<tr>
+		<td>MySQL</td>
+		<td><code>SELECT .1 + .2;</code></td>
+		<td>0.3</td>
+	</tr>
+	<!-- Erlang -->
+	<tr>
+		<td>Erlang</td>
+		<td><code>io:format("~w~n", [0.1 + 0.2]).</code></td>
+		<td>0.30000000000000004</td>
+	</tr>
+	<!-- Ruby -->
+	<tr>
+		<td>Ruby</td>
+		<td><code>puts 0.1 + 0.2</code></td>
+		<td>0.30000000000000004</td>
+	</tr>
+	<tr>
+		<td colspan="3" class="comment">
+			Ruby supports rational numbers via:
+			<a href="http://ruby-doc.org/core/classes/Rational.html">Rational</a>.
+			<br />
+			Ruby also has a library specifically for decimals:
+			<a href="http://ruby-doc.org/stdlib-1.9.3/libdoc/bigdecimal/rdoc/index.html">BigDecimal</a>.
+		</td>
+	</tr>
+	<!-- Python -->
+	<tr>
+		<td>Python</td>
+		<td>
+			<code>print(.1 + .2)</code><br />
+			And<br />
+			<code>.1 + .2</code>
+		</td>
+		<td>0.3<br />And<br />0.30000000000000004</td>
+	</tr>
+	<tr>
+		<td colspan="3" class="comment">
+			Python's "print" method converts 0.30000000000000004 to a string and shortens it to "0.3". To achieve the desired floating point result, use print(repr(.1 + .2)).
+		</td>
+	</tr>
+	<!-- JavaScript -->
+	<tr>
+		<td>JavaScript</td>
+		<td><code>document.writeln(.1 + .2);</code></td>
+		<td>0.30000000000000004</td>
+	</tr>
+	<!-- Java -->
+	<tr>
+		<td>Java</td>
+		<td><code>System.out.println(.1 + .2);</code></td>
+		<td>0.30000000000000004</td>
+	</tr>
+	<!-- GHC (Haskell) -->
+	<tr>
+		<td>GHC (Haskell)</td>
+		<td>
+			<code>0.1 + 0.2</code>
+		</td>
+		<td>
+			0.30000000000000004
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3" class="comment">
+			Haskell supports rational numbers. To get the math right,
+			<code>(1 % 10) + (2 % 10)</code> returns <code>3 % 10</code>.
+		</td>
+	</tr>
+	<!-- Hugs (Haskell) -->
+	<tr>
+		<td>Hugs (Haskell)</td>
+		<td><code>0.1 + 0.2</code></td>
+		<td>0.3</td>
+	</tr>
+	<!-- bc -->
+	<tr>
+		<td>bc</td>
+		<td><code>0.1 + 0.2</code></td>
+		<td>0.3</td>
+	</tr>
+	<!-- Gforth -->
+	<tr>
+		<td>Gforth</td>
+		<td><code>0.1e 0.2e f+ f.</code></td>
+		<td>0.3</td>
+	</tr>
+	<!-- dc -->
+	<tr>
+		<td>dc</td>
+		<td><code>0.1 0.2 + p</code></td>
+		<td>.3</td>
+	</tr>
+	<!-- Racket (PLT Scheme) -->
+	<tr>
+		<td>Racket (PLT Scheme)</td>
+		<td>
+			<code>(+ .1 .2)</code><br />
+			And<br />
+			<code>(+ 1/10 2/10)</code>
+		</td>
+		<td>
+			0.30000000000000004<br />
+			And<br />
+			3/10
+		</td>
+	</tr>
+	<!-- Emacs Lisp -->
+	<tr>
+		<td>Emacs Lisp</td>
+		<td><code>(+ .1 .2)</code></td>
+		<td>0.30000000000000004</td>
+	</tr>
+	<!-- Common Lisp -->
+	<tr>
+		<td>Common Lisp</td>
+		<td>
+			<code>* (+ .1 .2)</code><br />
+			And<br />
+			<code>* (+ 1/10 2/10)</code>
+		</td>
+		<td>
+			0.3<br />
+			And<br />
+			3/10
+		</td>
+	</tr>
+	<!-- Go -->
+	<tr>
+		<td>Go</td>
+		<td>
+			<code>package main<br />
+				import "fmt"<br />
+				func main() {<br />
+				&nbsp;&nbsp;fmt.Println(.1+.2)<br />
+				}</code>
+		</td>
+		<td>0.3</td>
+	</tr>
+	<!-- Powershell -->
+	<tr>
+		<td>Powershell</td>
+		<td><code>PS C:\&gt;0.1 + 0.2</code></td>
+		<td>0.3</td>
+	</tr>
+	<!-- Prolog -->
+	<tr>
+		<td>Prolog</td>
+		<td><code>?- X is 0.1 + 0.2.</code></td>
+		<td>X = 0.3.</td>
+	</tr>
+</table>
+
+<div>
+	<p>
+		I am Erik Wiffin.
+		You can contact me at:
+		<a href="http://erik.wiffin.com">erik.wiffin.com</a>
+		or
+		<a href="mailto:erik.wiffin@gmail.com">erik.wiffin@gmail.com</a>.
+	</p>
+</div>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-8267311-11']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+
+</html>
