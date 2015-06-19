@@ -54,6 +54,11 @@
 		<td><code>echo .1 + .2;</code></td>
 		<td>0.3</td>
 	</tr>
+	<tr>
+		<td colspan="3" class="comment">
+			PHP converts 0.30000000000000004 to a string and shortens it to "0.3". To achieve the desired floating point result, adjust the precision ini setting: ini_set("precision", 17).
+		</td>
+	</tr>
 	<!-- MySQL -->
 	<tr>
 		<td>MySQL</td>
