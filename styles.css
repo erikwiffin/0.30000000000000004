@@ -1,40 +1,46 @@
 body {
 	padding: 0px;
 	margin: 0px;
-	font-family: sans-serif;
-	font-size: 12px;
-	background: #9CF url('/white-to-blue.gif') top left repeat-x;
+	background-color: #fafafa;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 13px;
 }
 
-div {
-	width: 580px;
+h1, h2, h3 {
+	font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
+}
+
+.section {
+	width: 750px;
 	margin: 30px auto;
-	border: 3px solid #000;
-	background: #FFF;
-	border-radius: 15px;
-	-moz-border-radius: 15px;
 	padding: 5px 10px;
 }
 
-table {
-	width: 600px;
-	margin: 10px auto;
-	border: 3px solid #000;
-	background: #FFF;
-	border-radius: 15px;
-	-moz-border-radius: 15px;
-	padding: 5px;
+p {
+	line-height: 17px;
+}
+
+p.justify {
+	text-align: justify;
+}
+
+p.center {
+	text-align: center;
+}
+
+table.examples {
+	padding: 0;
 }
 
 th {
-	font-size: 2em;
+	text-align: left;
+	font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
+	font-size: 25px;
 }
+
 td {
 	border-top: 3px solid #CCC;
-	padding: 5px 2px;
-}
-td:hover {
-	border-top: 3px solid #9CF;
+	padding: 8px 2px;
 }
 
 .comment {
@@ -42,8 +48,8 @@ td:hover {
 	color: #666;
 	border-top: none !important;
 }
-code,
-.comment code {
+
+code, .comment code {
 	font-style: normal;
 	color: #000;
 }
