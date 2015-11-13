@@ -228,6 +228,25 @@
 		<td><code>perl -e 'printf q{%.17f}, 0.1+0.2'</code></td>
 		<td>0.30000000000000004</td>
 	</tr>
+	<!-- Scala -->
+	<tr>
+		<td>scala</td>
+		<td>
+			<code>scala -e 'println(0.1 + 0.2)'</code><br />
+			And<br />
+			<code>scala -e 'println(0.1F + 0.2F)'</code>
+			And<br />
+			<code>scala -e 'println(BigDecimal("0.1") + BigDecimal("0.2"))'</code>
+			
+		</td>   
+		<td>
+			0.30000000000000004<br />
+			And<br />
+			0.3<br />
+			And<br />
+			0.3
+		</td>
+	</tr>
 </table>
 
 <div>
