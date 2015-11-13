@@ -286,6 +286,8 @@ std::cout << setprecision(17) << 0.1 + 0.2 << std.endl;</pre></code></td>
 		<td>Rust</td>
 		<td>
 			<code><pre>
+extern crate num;
+use num::rational::Ratio;
 fn main() {
 	println!(.1+.2);
 	println!("1/10 + 2/10 = {}", Ratio::new(1, 10) + Ratio::new(2, 10));
