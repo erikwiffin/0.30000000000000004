@@ -8,7 +8,7 @@
 <title>0.30000000000000004 - Floating Point Math</title>
 
 <meta name="description" content="Some examples of sending .1 + .2 to standard output in a variety of languages." />
-<meta name="keywords" content="floating point, math, php, mysql, erlang, ruby, python, javascript, java, haskell, ghc, hugs, bc, gforth, dc, racket, scheme, lisp, go, powershell, prolog" />
+<meta name="keywords" content="bc, dc, erlang, floating point, gforth, ghc, go, haskell, hugs, java, javascript, lisp, math, mysql, php, powershell, prolog, python, racket, ruby, scheme" />
 <link rel="canonical" href="http://0.30000000000000004.com/" />
 
 <link rel="stylesheet" type="text/css"
@@ -48,17 +48,43 @@
 		<th>Code</th>
 		<th>Result</th>
 	</tr>
-	<!-- PHP -->
+	<!-- bc -->
 	<tr>
-		<td>PHP</td>
-		<td><code>echo .1 + .2;</code></td>
+		<td>bc</td>
+		<td><code>0.1 + 0.2</code></td>
 		<td>0.3</td>
 	</tr>
-	<!-- MySQL -->
+	<!-- С# -->
 	<tr>
-		<td>MySQL</td>
-		<td><code>SELECT .1 + .2;</code></td>
+		<td>C#</td>
+		<td><code>Console.WriteLine(.1 + .2);</code></td>
 		<td>0.3</td>
+	</tr>
+	<!-- Common Lisp -->
+	<tr>
+		<td>Common Lisp</td>
+		<td>
+			<code>* (+ .1 .2)</code><br />
+			And<br />
+			<code>* (+ 1/10 2/10)</code>
+		</td>
+		<td>
+			0.3<br />
+			And<br />
+			3/10
+		</td>
+	</tr>
+	<!-- dc -->
+	<tr>
+		<td>dc</td>
+		<td><code>0.1 0.2 + p</code></td>
+		<td>.3</td>
+	</tr>
+	<!-- Emacs Lisp -->
+	<tr>
+		<td>Emacs Lisp</td>
+		<td><code>(+ .1 .2)</code></td>
+		<td>0.30000000000000004</td>
 	</tr>
 	<!-- Erlang -->
 	<tr>
@@ -66,20 +92,87 @@
 		<td><code>io:format("~w~n", [0.1 + 0.2]).</code></td>
 		<td>0.30000000000000004</td>
 	</tr>
-	<!-- Ruby -->
+	<!-- Forth -->
 	<tr>
-		<td>Ruby</td>
-		<td><code>puts 0.1 + 0.2</code></td>
-		<td>0.30000000000000004</td>
+		<td>Forth (Gforth)</td>
+		<td><code>0.1e 0.2e f+ f.</code></td>
+		<td>0.3</td>
+	</tr>
+	<!-- Go -->
+	<tr>
+		<td>Go</td>
+		<td>
+			<code>package main<br />
+				import "fmt"<br />
+				func main() {<br />
+				&nbsp;&nbsp;fmt.Println(.1+.2)<br />
+				}</code>
+		</td>
+		<td>0.3</td>
+	</tr>
+	<!-- Haskell (GHC) -->
+	<tr>
+		<td>Haskell (GHC)</td>
+		<td>
+			<code>0.1 + 0.2</code>
+		</td>
+		<td>
+			0.30000000000000004
+		</td>
 	</tr>
 	<tr>
 		<td colspan="3" class="comment">
-			Ruby supports rational numbers via:
-			<a href="http://ruby-doc.org/core/classes/Rational.html">Rational</a>.
-			<br />
-			Ruby also has a library specifically for decimals:
-			<a href="http://ruby-doc.org/stdlib-1.9.3/libdoc/bigdecimal/rdoc/index.html">BigDecimal</a>.
+			Haskell supports rational numbers. To get the math right,
+			<code>(1 % 10) + (2 % 10)</code> returns <code>3 % 10</code>.
 		</td>
+	</tr>
+	<!-- Haskell (Hugs) -->
+	<tr>
+		<td>Haskell (Hugs)</td>
+		<td><code>0.1 + 0.2</code></td>
+		<td>0.3</td>
+	</tr>
+	<!-- Java -->
+	<tr>
+		<td>Java</td>
+		<td><code>System.out.println(.1 + .2);</code></td>
+		<td>0.30000000000000004</td>
+	</tr>
+	<!-- JavaScript -->
+	<tr>
+		<td>JavaScript</td>
+		<td><code>document.writeln(.1 + .2);</code></td>
+		<td>0.30000000000000004</td>
+	</tr>
+	<!-- MySQL -->
+	<tr>
+		<td>MySQL</td>
+		<td><code>SELECT .1 + .2;</code></td>
+		<td>0.3</td>
+	</tr>
+	<!-- Perl -->
+	<tr>
+		<td>Perl</td>
+		<td><code>perl -e 'printf q{%.17f}, 0.1+0.2'</code></td>
+		<td>0.30000000000000004</td>
+	</tr>
+	<!-- PHP -->
+	<tr>
+		<td>PHP</td>
+		<td><code>echo .1 + .2;</code></td>
+		<td>0.3</td>
+	</tr>
+	<!-- Powershell -->
+	<tr>
+		<td>Powershell</td>
+		<td><code>PS C:\&gt;0.1 + 0.2</code></td>
+		<td>0.3</td>
+	</tr>
+	<!-- Prolog -->
+	<tr>
+		<td>Prolog</td>
+		<td><code>?- X is 0.1 + 0.2.</code></td>
+		<td>X = 0.3.</td>
 	</tr>
 	<!-- Python -->
 	<tr>
@@ -96,64 +189,6 @@
 			Python's "print" method converts 0.30000000000000004 to a string and shortens it to "0.3". To achieve the desired floating point result, use print(repr(.1 + .2)).
 		</td>
 	</tr>
-	<!-- JavaScript -->
-	<tr>
-		<td>JavaScript</td>
-		<td><code>document.writeln(.1 + .2);</code></td>
-		<td>0.30000000000000004</td>
-	</tr>
-	<!-- Java -->
-	<tr>
-		<td>Java</td>
-		<td><code>System.out.println(.1 + .2);</code></td>
-		<td>0.30000000000000004</td>
-	</tr>
-	<!-- С# -->
-	<tr>
-		<td>C#</td>
-		<td><code>Console.WriteLine(.1 + .2);</code></td>
-		<td>0.3</td>
-	</tr>
-	<!-- GHC (Haskell) -->
-	<tr>
-		<td>GHC (Haskell)</td>
-		<td>
-			<code>0.1 + 0.2</code>
-		</td>
-		<td>
-			0.30000000000000004
-		</td>
-	</tr>
-	<tr>
-		<td colspan="3" class="comment">
-			Haskell supports rational numbers. To get the math right,
-			<code>(1 % 10) + (2 % 10)</code> returns <code>3 % 10</code>.
-		</td>
-	</tr>
-	<!-- Hugs (Haskell) -->
-	<tr>
-		<td>Hugs (Haskell)</td>
-		<td><code>0.1 + 0.2</code></td>
-		<td>0.3</td>
-	</tr>
-	<!-- bc -->
-	<tr>
-		<td>bc</td>
-		<td><code>0.1 + 0.2</code></td>
-		<td>0.3</td>
-	</tr>
-	<!-- Gforth -->
-	<tr>
-		<td>Gforth</td>
-		<td><code>0.1e 0.2e f+ f.</code></td>
-		<td>0.3</td>
-	</tr>
-	<!-- dc -->
-	<tr>
-		<td>dc</td>
-		<td><code>0.1 0.2 + p</code></td>
-		<td>.3</td>
-	</tr>
 	<!-- Racket (PLT Scheme) -->
 	<tr>
 		<td>Racket (PLT Scheme)</td>
@@ -168,55 +203,20 @@
 			3/10
 		</td>
 	</tr>
-	<!-- Emacs Lisp -->
+	<!-- Ruby -->
 	<tr>
-		<td>Emacs Lisp</td>
-		<td><code>(+ .1 .2)</code></td>
+		<td>Ruby</td>
+		<td><code>puts 0.1 + 0.2</code></td>
 		<td>0.30000000000000004</td>
 	</tr>
-	<!-- Common Lisp -->
 	<tr>
-		<td>Common Lisp</td>
-		<td>
-			<code>* (+ .1 .2)</code><br />
-			And<br />
-			<code>* (+ 1/10 2/10)</code>
+		<td colspan="3" class="comment">
+			Ruby supports rational numbers via:
+			<a href="http://ruby-doc.org/core/classes/Rational.html">Rational</a>.
+			<br />
+			Ruby also has a library specifically for decimals:
+			<a href="http://ruby-doc.org/stdlib-1.9.3/libdoc/bigdecimal/rdoc/index.html">BigDecimal</a>.
 		</td>
-		<td>
-			0.3<br />
-			And<br />
-			3/10
-		</td>
-	</tr>
-	<!-- Go -->
-	<tr>
-		<td>Go</td>
-		<td>
-			<code>package main<br />
-				import "fmt"<br />
-				func main() {<br />
-				&nbsp;&nbsp;fmt.Println(.1+.2)<br />
-				}</code>
-		</td>
-		<td>0.3</td>
-	</tr>
-	<!-- Powershell -->
-	<tr>
-		<td>Powershell</td>
-		<td><code>PS C:\&gt;0.1 + 0.2</code></td>
-		<td>0.3</td>
-	</tr>
-	<!-- Prolog -->
-	<tr>
-		<td>Prolog</td>
-		<td><code>?- X is 0.1 + 0.2.</code></td>
-		<td>X = 0.3.</td>
-	</tr>
-	<!-- Perl -->
-	<tr>
-		<td>Perl</td>
-		<td><code>perl -e 'printf q{%.17f}, 0.1+0.2'</code></td>
-		<td>0.30000000000000004</td>
 	</tr>
 </table>
 
