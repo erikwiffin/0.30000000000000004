@@ -113,12 +113,16 @@ int main(int argc, char** argv) {
 	<!-- Ruby -->
 	<tr>
 		<td>Ruby</td>
-		<td><code>puts 0.1 + 0.2</code></td>
-		<td>0.30000000000000004</td>
+		<td>
+			<code>puts 0.1 + 0.2</code><br />
+			And<br />
+			<code>puts 1/10r + 2/10r</code>
+		</td>
+		<td>0.30000000000000004<br />And<br />3/10</td>
 	</tr>
 	<tr>
 		<td colspan="3" class="comment">
-			Ruby supports rational numbers via:
+			Ruby supports rational numbers in syntax with version 2.1 and newer directly.  For older versions use
 			<a href="http://ruby-doc.org/core/classes/Rational.html">Rational</a>.
 			<br />
 			Ruby also has a library specifically for decimals:
