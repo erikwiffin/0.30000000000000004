@@ -196,17 +196,13 @@ std::cout << setprecision(17) << 0.1 + 0.2 << std.endl;</pre></code></td>
 		<td colspan="3" class="comment">
 			Julia has built-in
 			<a href="http://docs.julialang.org/en/release-0.4/manual/complex-and-rational-numbers/#rational-numbers">rational numbers support</a>
-			and also built-in
+			and also a built-in
 			<a href="http://docs.julialang.org/en/release-0.4/manual/integers-and-floating-point-numbers/#arbitrary-precision-arithmetic">arbitrary-precision BigFloat</a> data type.
+            To get the math right,
+            <code>1//10 + 2//10</code> returns <code>3//10</code>.
 		</td>
 	</tr>
 	<!-- Clojure -->
-	<tr>
-		<td colspan="3" class="comment">
-			Clojure supports rational numbers. To get the math right,
-			<code>(+ 1/10 2/10)</code> returns <code>3/10</code>.
-		</td>
-	</tr>
 	<tr>
 		<td>Clojure</td>
 		<td><code>(+ 0.1 0.2)</code></td>
