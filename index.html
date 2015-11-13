@@ -99,6 +99,12 @@ std::cout << setprecision(17) << 0.1 + 0.2 << std.endl;</pre></code></td>
 		<td><code>SELECT .1 + .2;</code></td>
 		<td>0.3</td>
 	</tr>
+	<!-- Postgres 9.4.4 -->
+	<tr>
+		<td>Postgres</td>
+		<td><code>SELECT select 0.1::float + 0.2::float;</code></td>
+		<td>0.3</td>
+	</tr>
 	<!-- Delphi XE5 -->
 	<tr>
 		<td>Delphi XE5</td>
