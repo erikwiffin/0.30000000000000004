@@ -114,16 +114,19 @@
 	<tr>
 		<td>Haskell (GHC)</td>
 		<td>
-			<code>0.1 + 0.2</code>
+			<code>0.1 + 0.2</code><br/>
+			And<br/>
+			<code>1%10 + 2%10</code>
 		</td>
 		<td>
-			0.30000000000000004
+			0.30000000000000004<br/>
+			And<br/>
+			3 % 10
 		</td>
 	</tr>
 	<tr>
 		<td colspan="3" class="comment">
-			Haskell supports rational numbers. To get the math right,
-			<code>(1 % 10) + (2 % 10)</code> returns <code>3 % 10</code>.
+			Haskell supports rational numbers via Data.Ratio, using a <code>dividend % divisor</code>syntax.
 		</td>
 	</tr>
 	<!-- Haskell (Hugs) -->
