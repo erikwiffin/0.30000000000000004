@@ -220,13 +220,25 @@
 	<tr>
 		<td>Go</td>
 		<td>
-			<code>package main<br />
-				import "fmt"<br />
-				func main() {<br />
-				&nbsp;&nbsp;fmt.Println(.1+.2)<br />
-				}</code>
+			<code><pre>
+package main
+import "fmt"
+func main() {
+	fmt.Println(.1 + .2)
+	var a float64 = .1
+	var b float64 = .2
+	fmt.Println(a + b)
+}</pre></code>
 		</td>
-		<td>0.3</td>
+		<td>
+			0.3<br />
+			0.30000000000000004
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3" class="comment">
+			<a href="http://blog.golang.org/constants#TOC_8.">Go numeric constants have arbitrary precision</a>.
+		</td>
 	</tr>
 	<!-- Powershell -->
 	<tr>
