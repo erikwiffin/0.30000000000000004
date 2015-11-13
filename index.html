@@ -148,11 +148,9 @@ std::cout << setprecision(17) << 0.1 + 0.2 << std.endl;</pre></code></td>
 		<td>
 			<code>print(.1 + .2)</code><br />
 			And<br />
-			<code>float(decimal.Decimal(".1") + decimal.Decimal(".2"))</code>
-			And<br />
 			<code>.1 + .2</code>
 		</td>
-		<td>0.3<br />And<br />0.3<br/>And<br />0.30000000000000004</td>
+		<td>0.3<br />And<br />0.30000000000000004</td>
 	</tr>
 	<tr>
 		<td colspan="3" class="comment">
@@ -486,6 +484,12 @@ void main(string[] args) {
 		</td>
 		<td>3.0000000000000004E-01<br />And<br />0.3</td>
 	</tr>	
+	<!-- Dart -->
+	<tr>
+		<td>Dart</td>
+		<td><code>print(.1 + .2);</code></td>
+		<td>0.30000000000000004</td>
+	</tr>
 </table>
 
 <div>
