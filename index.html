@@ -212,11 +212,22 @@
 		<td><code>?- X is 0.1 + 0.2.</code></td>
 		<td>X = 0.3.</td>
 	</tr>
-	<!-- Perl -->
+	<!-- Perl 5-->
 	<tr>
-		<td>Perl</td>
+		<td>Perl 5</td>
 		<td><code>perl -e 'printf q{%.17f}, 0.1+0.2'</code></td>
 		<td>0.30000000000000004</td>
+	</tr>
+	<!-- Perl 6-->
+	<tr>
+		<td>Perl 6</td>
+		<td><code>perl6 -e 'printf q{%.17f}, 0.1+0.2'</code></td>
+		<td>0.0000000000003e+16</td>
+	</tr>
+	<tr>
+		<td colspan="3" class="comment">
+			Perl6 supports rational numbers, it then returns 17 digits as requested.
+		</td>
 	</tr>
 </table>
 
