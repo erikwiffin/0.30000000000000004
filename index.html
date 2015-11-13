@@ -442,6 +442,24 @@ func main() {
 		<td><code>0.1 + 0.2</code></td>
 		<td>0.3</td>
   </tr>
+  	<!-- D -->
+	<tr>
+		<td>D</td>
+		<td><code><pre>
+import std.stdio;
+
+void main(string[] args) {
+    writefln("%.17f", .1+.2);
+    writefln("%.17f", .1f+.2f);
+    writefln("%.17f", .1L+.2L);
+}
+		</pre></code></td>
+		<td>
+			0.29999999999999999<br>
+			0.30000001192092896<br>
+			0.30000000000000000
+		</td>
+	</tr>
 </table>
 
 <div>
