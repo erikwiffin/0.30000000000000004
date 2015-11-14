@@ -231,16 +231,16 @@ std::cout << setprecision(17) << 0.1 + 0.2 << std.endl;</pre></code></td>
 	<tr>
 		<td>GHC (Haskell)</td>
 		<td>
-			<code>0.1 + 0.2</code>
+			<code>0.1 + 0.2</code><br/>
+			Rational numbers support:<br/>
+			<code>1%10 + 2%10</code><br/>
+			<code>1/10 + 2/10 :: Rational</code>
 		</td>
 		<td>
-			0.30000000000000004
-		</td>
-	</tr>
-	<tr>
-		<td colspan="3" class="comment">
-			Haskell supports rational numbers. To get the math right,
-			<code>(1 % 10) + (2 % 10)</code> returns <code>3 % 10</code>.
+			<code>0.30000000000000004</code><br/>
+			<br/>
+			<code>3 % 10</code><br/>
+			<code>3 % 10</code>
 		</td>
 	</tr>
 	<!-- Hugs (Haskell) -->
