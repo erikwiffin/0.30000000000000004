@@ -169,6 +169,33 @@ std::cout << setprecision(17) << 0.1 + 0.2 << std.endl;</pre></code></td>
 		</td>
 		<td>0.30000000000000004<br />And<br />0.30000000000000004</td>
 	</tr>
+	<!-- Pyret -->
+	<tr>
+		<td><a href="http://www.pyret.org/">Pyret</a></td>
+		<td><code>0.1 + 0.2</code><br />
+		    versus<br />
+		    <code>~0.1 + ~0.2</code></td>
+		<td><code>0.3</code><br />
+                    versus<br />
+		    <code>~0.30000000000000004</code></td>
+	</tr>
+	<tr>
+		<td colspan="3" class="comment">
+			Pyret has built-in support for both rational numbers
+		        and floating points. Numbers written
+	                normally are assumed to be exact. In contrast,
+		        <em>RoughNums</em> are represented by floating
+	                points, and are written with
+		        a <code>~</code> in front, to indicate that
+	                they are not precise answers. (The
+			<code>~</code> is meant to visually evoke hand-waving.)
+		        Therefore, a user who sees a computation
+		        produce <code>~0.30000000000000004</code>
+	                knows to treat the value with skepticism.
+		        RoughNums also cannot be compared directly for equality;
+	                they can only be compared up to a given tolerance.
+		</td>
+	</tr>
 	<!-- Lua -->
 	<tr>
 		<td>Lua</td>
