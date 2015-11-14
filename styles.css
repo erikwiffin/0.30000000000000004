@@ -1,7 +1,16 @@
+.col-centered {
+    float: none;
+    margin: 0 auto
+}
+
 .comment {
     font-style: italic;
     color: #666;
     border-top: none !important;
+}
+
+table {
+    /*table-layout: fixed;*/
 }
 
 td {
@@ -14,9 +23,4 @@ th {
 
 code {
     padding: 0;
-}
-
-.col-centered {
-    float: none;
-    margin: 0 auto
 }

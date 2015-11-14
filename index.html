@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8"/>
     <title>0.30000000000000004 - Floating Point Math</title>
 
@@ -67,42 +66,42 @@
             <a href="http://stackoverflow.com/questions/588004/is-javascripts-math-broken/588014">Stack Overflow</a>
         </p>
     </div>
-
     <table cellpadding="0" cellspacing="5" class="table table-hover table-bordered">
         <tr>
             <th class="col-xs-3">Language</th>
-            <th class="col-xs-3">Code</th>
-            <th class="col-xs-3">Result</th>
+            <th class="col-xs-5">Code</th>
+            <th class="col-xs-5">Result</th>
         </tr>
         <!-- C -->
         <tr>
             <td class="col-xs-3">C</td>
-            <td class="col-xs-3"><code><pre>
+            <td class="col-xs-5"><code><pre>
 #include&lt;stdio.h&gt;
 int main(int argc, char** argv) {
     printf("%.17f\n", .1+.2);
     return 0;
 }</pre>
             </code></td>
-            <td class="col-xs-3">0.30000000000000004</td>
+            <td class="col-xs-5">0.30000000000000004</td>
         </tr>
         <!-- C++ -->
         <tr>
             <td class="col-xs-3">C++</td>
-            <td class="col-xs-3"><code><pre>#include &lt;iomanip&gt;
+            <td class="col-xs-5"><code><pre>#include &lt;iomanip&gt;
 std::cout << setprecision(17) << 0.1 + 0.2 << std.endl;</pre>
             </code></td>
-            <td class="col-xs-3">0.30000000000000004</td>
+            <td class="col-xs-5">0.30000000000000004</td>
         </tr>
         <!-- PHP -->
         <tr>
             <td class="col-xs-3">PHP</td>
-            <td class="col-xs-3"><code>echo .1 + .2;</code></td>
-            <td class="col-xs-3">0.3</td>
+            <td class="col-xs-5"><code>echo .1 + .2;</code></td>
+            <td class="col-xs-5">0.3</td>
         </tr>
         <tr>
             <td colspan="3" class="comment col-xs12">
-                PHP converts 0.30000000000000004 to a string and shortens it to "0.3". To achieve the desired floating
+                PHP converts 0.30000000000000004 to a string and shortens it to "0.3". To achieve the desired
+                floating
                 point
                 result, adjust the precision ini setting: ini_set("precision", 17).
             </td>
@@ -110,8 +109,8 @@ std::cout << setprecision(17) << 0.1 + 0.2 << std.endl;</pre>
         <!-- MySQL -->
         <tr>
             <td class="col-xs-3">MySQL</td>
-            <td class="col-xs-3"><code>SELECT .1 + .2;</code></td>
-            <td class="col-xs-3">0.3</td>
+            <td class="col-xs-5"><code>SELECT .1 + .2;</code></td>
+            <td class="col-xs-5">0.3</td>
         </tr>
         <!-- Postgres 9.4.4 -->
         <tr>
@@ -122,30 +121,30 @@ std::cout << setprecision(17) << 0.1 + 0.2 << std.endl;</pre>
         <!-- Delphi XE5 -->
         <tr>
             <td class="col-xs-3">Delphi XE5</td>
-            <td class="col-xs-3"><code>writeln(0.1 + 0.2);</code></td>
-            <td class="col-xs-3"> 3.00000000000000E-0001</td>
+            <td class="col-xs-5"><code>writeln(0.1 + 0.2);</code></td>
+            <td class="col-xs-5"> 3.00000000000000E-0001</td>
         </tr>
         <!-- Erlang -->
         <tr>
             <td class="col-xs-3">Erlang</td>
-            <td class="col-xs-3"><code>io:format("~w~n", [0.1 + 0.2]).</code></td>
-            <td class="col-xs-3">0.30000000000000004</td>
+            <td class="col-xs-5"><code>io:format("~w~n", [0.1 + 0.2]).</code></td>
+            <td class="col-xs-5">0.30000000000000004</td>
         </tr>
         <!-- Elixir -->
         <tr>
             <td class="col-xs-3">Elixir</td>
-            <td class="col-xs-3"><code>IO.puts(0.1 + 0.2)</code></td>
-            <td class="col-xs-3">0.30000000000000004</td>
+            <td class="col-xs-5"><code>IO.puts(0.1 + 0.2)</code></td>
+            <td class="col-xs-5">0.30000000000000004</td>
         </tr>
         <!-- Ruby -->
         <tr>
             <td class="col-xs-3">Ruby</td>
-            <td class="col-xs-3">
+            <td class="col-xs-5">
                 <code>puts 0.1 + 0.2</code><br/>
                 And<br/>
                 <code>puts 1/10r + 2/10r</code>
             </td>
-            <td class="col-xs-3">0.30000000000000004<br/>And<br/>3/10</td>
+            <td class="col-xs-5">0.30000000000000004<br/>And<br/>3/10</td>
         </tr>
         <tr>
             <td colspan="3" class="comment col-xs-12">
@@ -159,14 +158,14 @@ std::cout << setprecision(17) << 0.1 + 0.2 << std.endl;</pre>
         <!-- Python 2 -->
         <tr>
             <td class="col-xs-3">Python 2</td>
-            <td class="col-xs-3">
+            <td class="col-xs-5">
                 <code>print(.1 + .2)</code><br/>
                 And<br/>
                 <code>float(decimal.Decimal(".1") + decimal.Decimal(".2"))</code>
                 And<br/>
                 <code>.1 + .2</code>
             </td>
-            <td class="col-xs-3">0.3<br/>And<br/>0.3<br/>And<br/>0.30000000000000004</td>
+            <td class="col-xs-5">0.3<br/>And<br/>0.3<br/>And<br/>0.30000000000000004</td>
         </tr>
         <tr>
             <td colspan="3" class="comment col-xs-12">
@@ -178,41 +177,41 @@ std::cout << setprecision(17) << 0.1 + 0.2 << std.endl;</pre>
         <!-- Python 3 -->
         <tr>
             <td class="col-xs-3">Python 3</td>
-            <td class="col-xs-3">
+            <td class="col-xs-5">
                 <code>print(.1 + .2)</code><br/>
                 And<br/>
                 <code>.1 + .2</code>
             </td>
-            <td class="col-xs-3">0.30000000000000004<br/>And<br/>0.30000000000000004</td>
+            <td class="col-xs-5">0.30000000000000004<br/>And<br/>0.30000000000000004</td>
         </tr>
         <!-- Lua -->
         <tr>
             <td class="col-xs-3">Lua</td>
-            <td class="col-xs-3"><code>print(.1 + .2)<br/>
+            <td class="col-xs-5"><code>print(.1 + .2)<br/>
                 print(string.format("%0.17f", 0.1 + 0.2))</code></td>
-            <td class="col-xs-3">0.3<br/>0.30000000000000004</td>
+            <td class="col-xs-5">0.3<br/>0.30000000000000004</td>
         </tr>
         <!-- JavaScript -->
         <tr>
             <td class="col-xs-3">JavaScript</td>
-            <td class="col-xs-3"><code>document.writeln(.1 + .2);</code></td>
-            <td class="col-xs-3">0.30000000000000004</td>
+            <td class="col-xs-5"><code>document.writeln(.1 + .2);</code></td>
+            <td class="col-xs-5">0.30000000000000004</td>
         </tr>
         <!-- Java -->
         <tr>
             <td class="col-xs-3">Java</td>
-            <td class="col-xs-3">
+            <td class="col-xs-5">
                 <code>System.out.println(.1 + .2);</code><br/>
                 And<br/>
                 <code>System.out.println(.1F + .2F);</code>
             </td>
-            <td class="col-xs-3">0.30000000000000004<br/>And<br/>0.3</td>
+            <td class="col-xs-5">0.30000000000000004<br/>And<br/>0.3</td>
         </tr>
         <!-- Julia -->
         <tr>
             <td class="col-xs-3">Julia</td>
-            <td class="col-xs-3"><code>.1 + .2</code></td>
-            <td class="col-xs-3">0.30000000000000004</td>
+            <td class="col-xs-5"><code>.1 + .2</code></td>
+            <td class="col-xs-5">0.30000000000000004</td>
         </tr>
         <tr>
             <td colspan="3" class="comment col-xs-12">
@@ -229,8 +228,8 @@ std::cout << setprecision(17) << 0.1 + 0.2 << std.endl;</pre>
         <!-- Clojure -->
         <tr>
             <td class="col-xs-3">Clojure</td>
-            <td class="col-xs-3"><code>(+ 0.1 0.2)</code></td>
-            <td class="col-xs-3">0.30000000000000004</td>
+            <td class="col-xs-5"><code>(+ 0.1 0.2)</code></td>
+            <td class="col-xs-5">0.30000000000000004</td>
         </tr>
         <tr>
             <td colspan="3" class="comment col-xs-12">
@@ -242,16 +241,16 @@ std::cout << setprecision(17) << 0.1 + 0.2 << std.endl;</pre>
         <!-- С# -->
         <tr>
             <td class="col-xs-3">C#</td>
-            <td class="col-xs-3"><code>Console.WriteLine("{0:R}", .1 + .2);</code></td>
-            <td class="col-xs-3">0.30000000000000004</td>
+            <td class="col-xs-5"><code>Console.WriteLine("{0:R}", .1 + .2);</code></td>
+            <td class="col-xs-5">0.30000000000000004</td>
         </tr>
         <!-- GHC (Haskell) -->
         <tr>
             <td class="col-xs-3">GHC (Haskell)</td>
-            <td class="col-xs-3">
+            <td class="col-xs-5">
                 <code>0.1 + 0.2</code>
             </td>
-            <td class="col-xs-3">
+            <td class="col-xs-5">
                 0.30000000000000004
             </td>
         </tr>
@@ -264,42 +263,42 @@ std::cout << setprecision(17) << 0.1 + 0.2 << std.endl;</pre>
         <!-- Hugs (Haskell) -->
         <tr>
             <td class="col-xs-3">Hugs (Haskell)</td>
-            <td class="col-xs-3"><code>0.1 + 0.2</code></td>
-            <td class="col-xs-3">0.3</td>
+            <td class="col-xs-5"><code>0.1 + 0.2</code></td>
+            <td class="col-xs-5">0.3</td>
         </tr>
         <!-- bc -->
         <tr>
             <td class="col-xs-3">bc</td>
-            <td class="col-xs-3"><code>0.1 + 0.2</code></td>
-            <td class="col-xs-3">0.3</td>
+            <td class="col-xs-5"><code>0.1 + 0.2</code></td>
+            <td class="col-xs-5">0.3</td>
         </tr>
         <!--Nim -->
         <tr>
             <td class="col-xs-3">Nim</td>
-            <td class="col-xs-3"><code>echo(0.1 + 0.2)</code></td>
-            <td class="col-xs-3">0.3</td>
+            <td class="col-xs-5"><code>echo(0.1 + 0.2)</code></td>
+            <td class="col-xs-5">0.3</td>
         </tr>
         <!-- Gforth -->
         <tr>
             <td class="col-xs-3">Gforth</td>
-            <td class="col-xs-3"><code>0.1e 0.2e f+ f.</code></td>
-            <td class="col-xs-3">0.3</td>
+            <td class="col-xs-5"><code>0.1e 0.2e f+ f.</code></td>
+            <td class="col-xs-5">0.3</td>
         </tr>
         <!-- dc -->
         <tr>
             <td class="col-xs-3">dc</td>
-            <td class="col-xs-3"><code>0.1 0.2 + p</code></td>
-            <td class="col-xs-3">.3</td>
+            <td class="col-xs-5"><code>0.1 0.2 + p</code></td>
+            <td class="col-xs-5">.3</td>
         </tr>
         <!-- Racket (PLT Scheme) -->
         <tr>
             <td class="col-xs-3">Racket (PLT Scheme)</td>
-            <td class="col-xs-3">
+            <td class="col-xs-5">
                 <code>(+ .1 .2)</code><br/>
                 And<br/>
                 <code>(+ 1/10 2/10)</code>
             </td>
-            <td class="col-xs-3">
+            <td class="col-xs-5">
                 0.30000000000000004<br/>
                 And<br/>
                 3/10
@@ -308,7 +307,7 @@ std::cout << setprecision(17) << 0.1 + 0.2 << std.endl;</pre>
         <!-- Rust -->
         <tr>
             <td class="col-xs-3">Rust</td>
-            <td class="col-xs-3">
+            <td class="col-xs-5">
                 <code><pre>
 extern crate num;
 use num::rational::Ratio;
@@ -318,7 +317,7 @@ fn main() {
 }</pre>
                 </code>
             </td>
-            <td class="col-xs-3">
+            <td class="col-xs-5">
                 0.30000000000000004<br/>
                 3/10
             </td>
@@ -334,24 +333,24 @@ fn main() {
         <!-- Emacs Lisp -->
         <tr>
             <td class="col-xs-3">Emacs Lisp</td>
-            <td class="col-xs-3"><code>(+ .1 .2)</code></td>
-            <td class="col-xs-3">0.30000000000000004</td>
+            <td class="col-xs-5"><code>(+ .1 .2)</code></td>
+            <td class="col-xs-5">0.30000000000000004</td>
         </tr>
         <!-- Turbo Pascal 7.0 -->
         <tr>
             <td class="col-xs-3">Turbo Pascal 7.0</td>
-            <td class="col-xs-3"><code>writeln(0.1 + 0.2);</code></td>
-            <td class="col-xs-3"> 3.0000000000E-01</td>
+            <td class="col-xs-5"><code>writeln(0.1 + 0.2);</code></td>
+            <td class="col-xs-5"> 3.0000000000E-01</td>
         </tr>
         <!-- Common Lisp -->
         <tr>
             <td class="col-xs-3">Common Lisp</td>
-            <td class="col-xs-3">
+            <td class="col-xs-5">
                 <code>* (+ .1 .2)</code><br/>
                 And<br/>
                 <code>* (+ 1/10 2/10)</code>
             </td>
-            <td class="col-xs-3">
+            <td class="col-xs-5">
                 0.3<br/>
                 And<br/>
                 3/10
@@ -360,7 +359,7 @@ fn main() {
         <!-- Go -->
         <tr>
             <td class="col-xs-3">Go</td>
-            <td class="col-xs-3">
+            <td class="col-xs-5">
                 <code><pre>
 package main
 import "fmt"
@@ -373,7 +372,7 @@ func main() {
 }</pre>
                 </code>
             </td>
-            <td class="col-xs-3">
+            <td class="col-xs-5">
                 0.3<br/>
                 0.30000000000000004<br/>
                 0.299999999999999988897769753748434595763683319091796875
@@ -387,37 +386,37 @@ func main() {
         <!-- Objective-C -->
         <tr>
             <td class="col-xs-3">Objective-C</td>
-            <td class="col-xs-3"><code>0.1 + 0.2;</code></td>
-            <td class="col-xs-3">0.300000012</td>
+            <td class="col-xs-5"><code>0.1 + 0.2;</code></td>
+            <td class="col-xs-5">0.300000012</td>
         </tr>
         <!-- OCaml -->
         <tr>
             <td class="col-xs-3">OCaml</td>
-            <td class="col-xs-3">
+            <td class="col-xs-5">
                 <code>0.1 +. 0.2;;</code>
-            <td class="col-xs-3">float = 0.300000000000000044</td>
+            <td class="col-xs-5">float = 0.300000000000000044</td>
             </td>
         </tr>
         <!-- Powershell -->
         <tr>
             <td class="col-xs-3">Powershell</td>
-            <td class="col-xs-3"><code>PS C:\&gt;0.1 + 0.2</code></td>
-            <td class="col-xs-3">0.3</td>
+            <td class="col-xs-5"><code>PS C:\&gt;0.1 + 0.2</code></td>
+            <td class="col-xs-5">0.3</td>
         </tr>
         <!-- Prolog -->
         <tr>
             <td class="col-xs-3">Prolog (SWI-Prolog)</td>
-            <td class="col-xs-3"><code>?- X is 0.1 + 0.2.</code></td>
-            <td class="col-xs-3">X = 0.30000000000000004.</td>
+            <td class="col-xs-5"><code>?- X is 0.1 + 0.2.</code></td>
+            <td class="col-xs-5">X = 0.30000000000000004.</td>
         </tr>
         <!-- Perl 5 -->
         <tr>
             <td class="col-xs-3">Perl 5</td>
-            <td class="col-xs-3">
+            <td class="col-xs-5">
                 <code>perl -E 'say 0.1+0.2'</code><br/>
                 <code>perl -e 'printf q{%.17f}, 0.1+0.2'</code>
             </td>
-            <td class="col-xs-3">
+            <td class="col-xs-5">
                 0.3<br/>
                 0.30000000000000004
             </td>
@@ -425,12 +424,12 @@ func main() {
         <!-- Perl 6 -->
         <tr>
             <td class="col-xs-3">Perl 6</td>
-            <td class="col-xs-3">
+            <td class="col-xs-5">
                 <code>perl6 -e 'say 0.1+0.2'</code><br/>
                 <code>perl6 -e 'say sprintf(q{%.17f}, 0.1+0.2)'</code><br/>
                 <code>perl6 -e 'say 1/10+2/10'</code>
             </td>
-            <td class="col-xs-3">
+            <td class="col-xs-5">
                 0.3<br/>
                 0.30000000000000000<br/>
                 0.3
@@ -438,20 +437,21 @@ func main() {
         </tr>
         <tr>
             <td colspan="3" class="comment col-xs-12">
-                <a href="http://doc.perl6.org/type/Rational">Perl 6, unlike Perl 5, uses rationals by default, so .1 is
+                <a href="http://doc.perl6.org/type/Rational">Perl 6, unlike Perl 5, uses rationals by default, so .1
+                    is
                     stored something like { numerator => 1, denominator => 10 }.</a>.
             </td>
         </tr>
         <!-- R -->
         <tr>
             <td class="col-xs-3">R</td>
-            <td class="col-xs-3"><code>print(.1+.2)<br/>print(.1+.2, digits=18)</code></td>
-            <td class="col-xs-3">0.3<br/>0.300000000000000044</td>
+            <td class="col-xs-5"><code>print(.1+.2)<br/>print(.1+.2, digits=18)</code></td>
+            <td class="col-xs-5">0.3<br/>0.300000000000000044</td>
         </tr>
         <!-- Scala -->
         <tr>
             <td class="col-xs-3">scala</td>
-            <td class="col-xs-3">
+            <td class="col-xs-5">
                 <code>scala -e 'println(0.1 + 0.2)'</code><br/>
                 And<br/>
                 <code>scala -e 'println(0.1F + 0.2F)'</code>
@@ -459,7 +459,7 @@ func main() {
                 <code>scala -e 'println(BigDecimal("0.1") + BigDecimal("0.2"))'</code>
 
             </td>
-            <td class="col-xs-3">
+            <td class="col-xs-5">
                 0.30000000000000004<br/>
                 And<br/>
                 0.3<br/>
@@ -470,19 +470,19 @@ func main() {
         <!-- Smalltalk -->
         <tr>
             <td class="col-xs-3">Smalltalk</td>
-            <td class="col-xs-3"><code>0.1 + 0.2.</code></td>
-            <td class="col-xs-3">0.30000000000000004</td>
+            <td class="col-xs-5"><code>0.1 + 0.2.</code></td>
+            <td class="col-xs-5">0.30000000000000004</td>
         </tr>
         <!-- Swift -->
         <tr>
             <td class="col-xs-3">Swift</td>
-            <td class="col-xs-3"><code>0.1 + 0.2</code></td>
-            <td class="col-xs-3">0.3</td>
+            <td class="col-xs-5"><code>0.1 + 0.2</code></td>
+            <td class="col-xs-5">0.3</td>
         </tr>
         <!-- D -->
         <tr>
             <td class="col-xs-3">D</td>
-            <td class="col-xs-3"><code><pre>
+            <td class="col-xs-5"><code><pre>
 import std.stdio;
 
 void main(string[] args) {
@@ -492,7 +492,7 @@ void main(string[] args) {
 }
         </pre>
             </code></td>
-            <td class="col-xs-3">
+            <td class="col-xs-5">
                 0.29999999999999999<br>
                 0.30000001192092896<br>
                 0.30000000000000000
