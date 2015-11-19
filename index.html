@@ -189,8 +189,11 @@ std::cout << setprecision(17) << 0.1 + 0.2 << std.endl;</pre></code></td>
 			<code>System.out.println(.1 + .2);</code><br />
 			And<br />
 			<code>System.out.println(.1F + .2F);</code>
+			<br />
+			And<br />
+			<code>System.out.println(new BigDecimal(0.1).add(new BigDecimal(0.2)));</code>
 		</td>
-		<td>0.30000000000000004<br />And<br />0.3</td>
+		<td>0.30000000000000004<br />And<br />0.3<br />And<br />0.3000000000000000166533453693773481063544750213623046875</td>
 	</tr>
 	<!-- Julia -->
 	<tr>
