@@ -208,6 +208,23 @@ std::cout << setprecision(17) << 0.1 + 0.2 << std.endl;</pre></code></td>
             <code>1//10 + 2//10</code> returns <code>3//10</code>.
 		</td>
 	</tr>
+	<!-- Mathematica -->
+	<tr>
+		<td>Mathematica</td>
+		<td><code>0.1 + 0.2</code></td>
+		<td>0.3</td>
+	</tr>
+	<tr>
+		<td colspan="3" class="comment">
+			Mathematica has a fairly thorough internal mechanism for dealing with
+			<a href="https://reference.wolfram.com/language/tutorial/NumericalPrecision.html">numerical precision</a> and supports arbitrary precision.
+			<br>
+			<a href="https://reference.wolfram.com/language/tutorial/MachinePrecisionNumbers.html">By default</a>, the inputs <code>0.1</code> and <code>0.2</code> in the example are taken to have <a href="https://reference.wolfram.com/language/ref/MachinePrecision.html"><code>MachinePrecision</code></a>. At a common <code>MachinePrecision</code> of <code>15.9546</code> digits, <code>0.1 + 0.2</code> actually has a <a href="https://reference.wolfram.com/language/ref/FullForm.html"><code>FullForm</code></a> of <code>0.30000000000000004`</code>, but is printed as <code>0.3</code>
+			<br>
+			Mathematica supports rational numbers: <code>1/10 + 2/10</code> is <code>3/10</code> (which has a <code>FullForm</code> of <code>Rational[3, 10]</code>).
+			<br />
+		</td>
+	</tr>
 	<!-- Clojure -->
 	<tr>
 		<td>Clojure</td>
