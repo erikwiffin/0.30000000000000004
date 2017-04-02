@@ -32,9 +32,9 @@ th {
 td {
 	border-top: 3px solid #CCC;
 	padding: 5px 2px;
-  max-width: 300px;
-  overflow: hidden;
-  text-overflow: ellipsis;
+	max-width: 300px;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 td:hover {
 	border-top: 3px solid #9CF;
