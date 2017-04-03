@@ -241,6 +241,8 @@ std::cout << setprecision(17) << 0.1 + 0.2 << std.endl;</pre></code></td>
 		<td colspan="3" class="comment">
 			Haskell supports rational numbers. To get the math right,
 			<code>(1 % 10) + (2 % 10)</code> returns <code>3 % 10</code>.
+			Alternatively, use <code>Data.Scientific</code>: <code>0.1 + 0.2 :: Scientific</code>
+			returns <code>0.3</code>.
 		</td>
 	</tr>
 	<!-- Hugs (Haskell) -->
