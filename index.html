@@ -127,11 +127,19 @@ std::cout << setprecision(17) << 0.1 + 0.2 << std.endl;</pre></code></td>
 	<tr>
 		<td>Ruby</td>
 		<td>
-			<code>puts 0.1 + 0.2</code><br />
-			And<br />
+			<code>puts 0.1 + 0.2</code>
+			<br />And<br />
 			<code>puts 1/10r + 2/10r</code>
+			<br />And<br />
+			<code>require 'bigdecimal'</code><br />
+			<code>puts BigDecimal('0.1') + BigDecimal('0.2')</code>
 		</td>
-		<td>0.30000000000000004<br />And<br />3/10</td>
+		<td>0.30000000000000004
+			<br />And<br />
+			3/10
+			<br />And<br />
+			0.3E0
+		</td>
 	</tr>
 	<tr>
 		<td colspan="3" class="comment">
