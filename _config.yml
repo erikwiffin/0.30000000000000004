@@ -15,8 +15,8 @@
 # in the templates via {{ site.myvariable }}.
 title: 0.30000000000000004.com
 email: erik.wiffin@gmail.com
-baseurl: "/0.30000000000000004" # the subpath of your site, e.g. /blog
-url: "http://erikwiffin.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://0.30000000000000004.com/" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 markdown: kramdown
