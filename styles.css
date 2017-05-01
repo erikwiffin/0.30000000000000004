@@ -17,7 +17,7 @@ div {
 }
 
 table {
-	width: 600px;
+	width: 800px;
 	margin: 10px auto;
 	border: 3px solid #000;
 	background: #FFF;
@@ -30,11 +30,10 @@ th {
 	font-size: 2em;
 }
 td {
-	border-top: 3px solid #CCC;
-	padding: 5px 2px;
-  max-width: 300px;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    border-top: 3px solid #CCC;
+    padding: 5px 2px;
+    max-width: 300px;
+    overflow: auto;
 }
 td:hover {
 	border-top: 3px solid #9CF;
@@ -49,4 +48,10 @@ code,
 .comment code {
 	font-style: normal;
 	color: #000;
+}
+pre {
+    margin: 0;
+}
+p {
+    margin: 0;
 }
