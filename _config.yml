@@ -20,8 +20,6 @@ url: "https://0.30000000000000004.com/" # the base hostname & protocol for your 
 
 # Build settings
 markdown: kramdown
-gems:
-  - jekyll-feed
 exclude:
   - Gemfile
   - Gemfile.lock
