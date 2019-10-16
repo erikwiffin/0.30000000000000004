@@ -49,7 +49,8 @@ layout: default
         <th>Code</th>
         <th>Result</th>
     </tr>
-    {% for post in site.posts reversed %}
+    {% assign sortedPosts = site.posts | sort: 'title' %}
+    {% for post in sortedPosts %}
     <tr>
         <td>{{ post.title }}</td>
         <td>
