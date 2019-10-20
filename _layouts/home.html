@@ -2,41 +2,82 @@
 layout: default
 ---
 
-<table cellpadding="0" cellspacing="5">
-    <tr>
-        <th>Language</th>
-        <th>Code</th>
-        <th>Result</th>
-    </tr>
-    {% assign sortedPosts = site.posts | sort: 'title' %}
-    {% for post in sortedPosts %}
-    <tr>
-        <td>{{ post.title }}</td>
-        <td>
-            {% if post.code.first %}
-                {% for code in post.code %}
-                    <pre><code>{{ code | xml_escape }}</code></pre>
-                {% if forloop.last %}{% else %}And{% endif %}
+<section class="section intro">
+    <div class="section__content">
+        {{ content }}
+    </div>
+</section>
+
+<section class="section">
+    <div class="section__content section__content--wide">
+        <table>
+            <thead>
+                <tr>
+                    <th class="table__heading">Language</th>
+                    <th class="table__heading">Code</th>
+                    <th class="table__heading">Result</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% assign sortedPosts = site.posts | sort: 'title' %}
+                {% for post in sortedPosts %}
+                <tr class="language__title language__title--row">
+                    <td colspan="2">
+                        <h3 class="language__name">
+                            <a class="language__name-link" href="#{{ post.slug }}">🔗</a>
+                            <span>{{ post.title }}</span>
+                        </h3>
+                    </td>
+                </tr>
+
+                <tr id="{{ post.slug }}">
+                    <td class="language__title language__title--cell">
+                        <h3 class="language__name">
+                            <a class="language__name-link" href="#{{ post.slug }}">🔗</a>
+                            <span>{{ post.title }}</span>
+                        </h3>
+                    </td>
+
+                    <td class="language__code">
+                        <div>
+                            {% if post.code.first %}
+                                {% for code in post.code %}
+                                    <pre><code>{{ code | xml_escape }}</code></pre>
+                                    {% unless forloop.last %}
+                                        <div class="and">and</div>
+                                    {% endunless %}
+                                {% endfor %}
+                            {% else %}
+                                <pre><code>{{ post.code | xml_escape }}</code></pre>
+                            {% endif %}
+                        </div>
+                    </td>
+
+                    <td class="language__result">
+                        <div>
+                            {% if post.result.first %}
+                                {% for result in post.result %}
+                                    <pre><code>{{ result | xml_escape }}</code></pre>
+                                    {% unless forloop.last %}
+                                        <div class="and">and</div>
+                                    {% endunless %}
+                                {% endfor %}
+                            {% else %}
+                                <pre><code>{{ post.result | xml_escape }}</code></pre>
+                            {% endif %}
+                        </div>
+                    </td>
+                </tr>
+
+                {% if post.excerpt.size > 1 %}
+                <tr>
+                    <td class="comment" colspan="3">{{ post.excerpt }}</td>
+                </tr>
+                {% endif %}
+
                 {% endfor %}
-            {% else %}
-                <pre><code>{{ post.code | xml_escape }}</code></pre>
-            {% endif %}
-        </td>
-        <td>
-            {% if post.result.first %}
-                {% for result in post.result %}
-                    {{ result | markdownify }}
-                    {% if forloop.last %}{% else %}And{% endif %}
-                {% endfor %}
-            {% else %}
-                {{ post.result | markdownify }}
-            {% endif %}
-        </td>
-    </tr>
-    {% if post.excerpt.size > 1 %}
-    <tr>
-        <td colspan="3" class="comment">{{ post.excerpt }}</td>
-    </tr>
-    {% endif %}
-    {% endfor %}
-</table>
+            </tbody>
+        </table>
+    </div>
+</section>
