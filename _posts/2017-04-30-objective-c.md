@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Objective-C
 code: |-
   #import <Foundation/Foundation.h>

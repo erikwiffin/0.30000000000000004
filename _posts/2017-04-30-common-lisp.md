@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Common Lisp
 code:
   - (+ .1 .2)
