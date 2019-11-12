@@ -51,7 +51,9 @@ code,
 }
 pre {
     margin: 0;
+    overflow: auto;
 }
 p {
     margin: 0;
+    overflow: auto;
 }
