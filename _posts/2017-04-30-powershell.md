@@ -1,6 +1,10 @@
 ---
 layout: post
 title: "Powershell"
-code: 'PS C:\>0.1 + 0.2'
-result: '0.3'
+code: 
+  - $a = 0.1
+  - $b = 0.2
+  - write-host ($a+$b)
+result:
+  - 0.300000004470348
 ---
