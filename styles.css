@@ -4,6 +4,7 @@ body {
 	font-family: sans-serif;
 	font-size: 12px;
 	background: #9CF url('/white-to-blue.gif') top left repeat-x;
+	color: #000;
 }
 
 div {
@@ -56,4 +57,12 @@ pre {
 p {
     margin: 0;
     overflow: auto;
+}
+
+a {
+    color: #00F;
+}
+
+a:visited {
+    color: #80F;
 }
