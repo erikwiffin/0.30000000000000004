@@ -1,6 +1,5 @@
 ---
-layout: post
-title: 'ColdFusion'
+title: ColdFusion
 code: |-
   <cfset foo = .1 + .2>
   <cfoutput>#foo#</cfoutput>

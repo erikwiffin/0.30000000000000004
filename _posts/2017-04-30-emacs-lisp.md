@@ -1,6 +1,5 @@
 ---
-layout: post
-title: "Emacs Lisp"
-code: '(+ .1 .2)'
-result: "0.30000000000000004"
+title: Emacs Lisp
+code: (+ .1 .2)
+result: 0.30000000000000004
 ---
