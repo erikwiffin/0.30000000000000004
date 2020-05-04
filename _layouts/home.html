@@ -1,83 +1,83 @@
 ---
 layout: default
 ---
-<div>
-    <h1>Floating Point Math</h1>
-    <p>
-        Your language isn't broken, it's doing floating point math.
-        Computers can only natively store integers,
-        so they need some way of representing decimal numbers.
-        This representation comes with some degree of inaccuracy.
-        That's why, more often than not, <code>.1 + .2 != .3</code>.
-    </p>
 
-    <h3>Why does this happen?</h3>
-    <p>
-        It's actually rather interesting. When you have a base 10 system (like ours),
-        it can only express fractions that use a prime factor of the base.
-        The prime factors of 10 are 2 and 5. So 1/2, 1/4, 1/5, 1/8, and 1/10
-        can all be expressed cleanly because the denominators all use prime factors of 10.
-        In contrast, 1/3, 1/6, and 1/7 are all repeating decimals because their denominators use a prime factor of 3 or 7.
-        In binary (or base 2), the only prime factor is 2. So you can only express fractions cleanly which only contain 2 as a prime factor.
-        In binary, 1/2, 1/4, 1/8 would all be expressed cleanly as decimals.
-        While, 1/5 or 1/10 would be repeating decimals.
-        So 0.1 and 0.2 (1/10 and 1/5) while clean decimals in a base 10 system, are repeating decimals in the base 2 system the computer is operating in.
-        When you do math on these repeating decimals, you end up with leftovers which carry
-        over when you convert the computer's base 2 (binary) number into a more human readable base 10 number.
-    </p>
+<section class="section intro">
+    <div class="section__content">
+        {{ content }}
+    </div>
+</section>
 
-    <p>
-        Below are some examples of sending <code>.1 + .2</code>
-        to standard output in a variety of languages.
-    </p>
-    <p align="center">
-        read more:
-        |
-        <a href="http://en.wikipedia.org/wiki/Floating_point">wikipedia</a>
-        |
-        <a href="https://standards.ieee.org/standard/754-2008.html">IEEE 754</a>
-        |
-        <a href="http://stackoverflow.com/questions/588004/is-javascripts-math-broken/588014">Stack Overflow</a>
-        |
-        <a href="http://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html">What Every Computer Scientist Should Know About Floating-Point Arithmetic</a>
-    </p>
-</div>
+<section class="section">
+    <div class="section__content section__content--wide">
+        <table>
+            <thead>
+                <tr>
+                    <th class="table__heading">Language</th>
+                    <th class="table__heading">Code</th>
+                    <th class="table__heading">Result</th>
+                </tr>
+            </thead>
 
-<table cellpadding="0" cellspacing="5">
-    <tr>
-        <th>Language</th>
-        <th>Code</th>
-        <th>Result</th>
-    </tr>
-    {% assign sortedPosts = site.posts | sort: 'title' %}
-    {% for post in sortedPosts %}
-    <tr>
-        <td>{{ post.title }}</td>
-        <td>
-            {% if post.code.first %}
-                {% for code in post.code %}
-                    <pre><code>{{ code | xml_escape }}</code></pre>
-                {% if forloop.last %}{% else %}And{% endif %}
+            <tbody>
+                {% assign sortedPosts = site.posts | sort: 'title' %}
+                {% for post in sortedPosts %}
+                <tr class="language__title language__title--row">
+                    <td colspan="2">
+                        <h3 class="language__name">
+                            <a class="language__name-link" href="#{{ post.slug }}">🔗</a>
+                            <span>{{ post.title }}</span>
+                        </h3>
+                    </td>
+                </tr>
+
+                <tr id="{{ post.slug }}">
+                    <td class="language__title language__title--cell">
+                        <h3 class="language__name">
+                            <a class="language__name-link" href="#{{ post.slug }}">🔗</a>
+                            <span>{{ post.title }}</span>
+                        </h3>
+                    </td>
+
+                    <td class="language__code">
+                        <div>
+                            {% if post.code.first %}
+                                {% for code in post.code %}
+                                    <pre><code>{{ code | xml_escape }}</code></pre>
+                                    {% unless forloop.last %}
+                                        <div class="and">and</div>
+                                    {% endunless %}
+                                {% endfor %}
+                            {% else %}
+                                <pre><code>{{ post.code | xml_escape }}</code></pre>
+                            {% endif %}
+                        </div>
+                    </td>
+
+                    <td class="language__result">
+                        <div>
+                            {% if post.result.first %}
+                                {% for result in post.result %}
+                                    <pre><code>{{ result | xml_escape }}</code></pre>
+                                    {% unless forloop.last %}
+                                        <div class="and">and</div>
+                                    {% endunless %}
+                                {% endfor %}
+                            {% else %}
+                                <pre><code>{{ post.result | xml_escape }}</code></pre>
+                            {% endif %}
+                        </div>
+                    </td>
+                </tr>
+
+                {% if post.excerpt.size > 1 %}
+                <tr>
+                    <td class="comment" colspan="3">{{ post.excerpt }}</td>
+                </tr>
+                {% endif %}
+
                 {% endfor %}
-            {% else %}
-                <pre><code>{{ post.code | xml_escape }}</code></pre>
-            {% endif %}
-        </td>
-        <td>
-            {% if post.result.first %}
-                {% for result in post.result %}
-                    {{ result | markdownify }}
-                    {% if forloop.last %}{% else %}And{% endif %}
-                {% endfor %}
-            {% else %}
-                {{ post.result | markdownify }}
-            {% endif %}
-        </td>
-    </tr>
-    {% if post.excerpt.size > 1 %}
-    <tr>
-        <td colspan="3" class="comment">{{ post.excerpt }}</td>
-    </tr>
-    {% endif %}
-    {% endfor %}
-</table>
+            </tbody>
+        </table>
+    </div>
+</section>
