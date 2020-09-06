@@ -1,9 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-    {% include head.html %}
-    <body>
-        {{ content }}
+{% include head.html %}
 
-        {% include footer.html %}
-    </body>
-</html>
+{{ content }}
+
+<footer class="section footer">
+    <div class="section__content">
+        <p>
+            I am Erik Wiffin. You can contact me at:
+            <a href="http://erik.wiffin.com">erik.wiffin.com</a>
+            or
+            <a href="mailto:erik.wiffin@gmail.com">erik.wiffin@gmail.com</a>.
+        </p>
+
+        <p>
+            This project is on <a href="https://github.com/erikwiffin/0.30000000000000004">GitHub</a>.
+            If you think this page could be improved, send me a pull request.
+        </p>
+    </div>
+</footer>
+
+{% include footer.html %}
