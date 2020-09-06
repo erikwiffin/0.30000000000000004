@@ -9,7 +9,7 @@ than not, `0.1 + 0.2 != 0.3`.
 
 ### Why does this happen?
 
-It's actually pretty simple. When you have a base-10 system (like ours), it can
+It’s actually rather interesting. When you have a base-10 system (like ours), it can
 only express fractions that use a prime factor of the base. The prime factors of
 10 are 2 and 5. So 1 / 2, 1 / 4, 1 / 5, 1 / 8, and 1 / 10 can all be expressed cleanly
 because the denominators all use prime factors of 10. In contrast, 1 / 3, 1 / 6, and
