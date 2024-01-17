@@ -11,7 +11,7 @@ result:
 ---
 
 Smalltalk uses fractions by default in most operations; in
-fact, standard devision results in fractions, not floating
+fact, standard division results in fractions, not floating
 point numbers. Squeak and similar Smalltalks provide "scaled
 decimals" that allow fixed-point real numbers (`s`-suffix
 indicating precision places).
