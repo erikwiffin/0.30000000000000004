@@ -1,11 +1,11 @@
 ---
 title: PowerShell
-code: 
+code: |-
   - 0.1 + 0.2
   - 0.1 + 0.2 -eq 0.3
   - [decimal]0.1 + [decimal]0.2 -eq [decimal]0.3
   - 0.1d + 0.2d -eq 0.3d
-result: 
+result: |-
   - 0.3
   - False
   - True
