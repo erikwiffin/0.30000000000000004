@@ -18,4 +18,4 @@ Mathematica supports rational numbers: `1/10 + 2/10` is `3/10` (which has a
 [1]: https://reference.wolfram.com/language/tutorial/Numbers.html#21155
 [2]: https://reference.wolfram.com/language/tutorial/MachinePrecisionNumbers.html
 [3]: https://reference.wolfram.com/language/ref/MachinePrecision.html
-[3]: https://reference.wolfram.com/language/ref/FullForm.html
+[4]: https://reference.wolfram.com/language/ref/FullForm.html
