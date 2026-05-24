@@ -25,5 +25,5 @@ When you do math on these repeating decimals, you end up with leftovers which
 carry over when you convert the computer's base-2 (binary) number into a more
 human-readable base-10 representation.
 
-Below are some examples of sending `.1 + .2` to standard output in a variety of
+Below are some examples of sending `0.1 + 0.2` to standard output in a variety of
 languages.
