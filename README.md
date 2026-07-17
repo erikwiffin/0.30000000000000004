@@ -27,3 +27,26 @@ human-readable base-10 representation.
 
 Below are some examples of sending `.1 + .2` to standard output in a variety of
 languages.
+
+### consider using `%.17g` for `printf` and friends
+
+If your platform supports `printf` and like, it is worth trying `"%.17g"` for output format of floating point numbers.  It does the same as `"%.17f"` when necessary while it keeps the output concise when unnecessary, like `0.5` and `0.9990234375` (`1023/1024`)
+
+### Hexfloat -- How to Exactly Represent Binary Floating Point Numbers
+
+With the introduction of the Hexadecimal Floating-Point Literals (*hexfloat* for short) in [C99] and [C++17], You can now get and/or set the exact values of binary floating point numbers instead of their decimal approximations in platforms that support this feature.
+
+[C99]: https://en.cppreference.com/w/c/language/floating_constant.html
+[C++17]: https://en.cppreference.com/w/cpp/language/floating_literal.html
+
+| Decimal | Hexfloat |
+|:---------|:----------|
+| `0.1` | `0x1.999999999999ap-4`
+| `0.2` | `0x1.999999999999ap-3`
+| `0.3` | `0x1.3333333333333p-2`
+| `0.1+0.2` | `0x1.3333333333334p-2`
+| `0.30000000000000004` | `0x1.3333333333334p-2`
+
+To stringify to hexfloat notations, Use `%a` or `%A` in the [printf] format.
+
+[printf]: https://en.cppreference.com/w/c/io/fprintf.html
